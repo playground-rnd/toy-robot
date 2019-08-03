@@ -1,0 +1,24 @@
+{
+  "name": "toy-robot",
+  "version": "1.0.0",
+  "description": "Toy Robot using node",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Hiroyo Horikawa",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.20.0",
+    "esm": "^3.2.25",
+    "inquirer": "^6.5.0",
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0"
+  }
+}

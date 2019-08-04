@@ -4,19 +4,22 @@ test("currentPlace cannot be empty", () => {
   expect(changeDirection().error).toBeTruthy();
 });
 
-test("commandDirection cannot be empty", () => {
+test("getNextDirectionIndex cannot be empty", () => {
   expect(changeDirection({ x: 0, y: 0, direction: "north" }).error).toBeTruthy();
 });
 
 test("currentPlace.direction must be valid direction", () => {
-  expect(changeDirection(null, { direction: "" }).error).toBeTruthy();
-  expect(changeDirection(null, { direction: null }).error).toBeTruthy();
-  expect(changeDirection(null, { direction: undefined }).error).toBeTruthy();
-  expect(changeDirection(null, { direction: "invalid direction" }).error).toBeTruthy();
+  expect(changeDirection({ direction: "" }, () => 1).error).toBeTruthy();
+  expect(changeDirection({ direction: null }, () => 1).error).toBeTruthy();
+  expect(changeDirection({ direction: undefined }, () => 1).error).toBeTruthy();
+  expect(changeDirection({ direction: "invalid direction" }, () => 1).error).toBeTruthy();
 });
 
-test("commandDirection must be valid direction", () => {
+test("getNextDirectionIndex must be a function, returning number", () => {
   expect(changeDirection({ x: 0, y: 0, direction: "north" }, "invalid").error).toBeTruthy();
+  expect(changeDirection({ x: 0, y: 0, direction: "north" }, () => "invalid").error).toBeTruthy();
+  expect(changeDirection({ x: 0, y: 0, direction: "north" }, () => -1).error).toBeTruthy();
+  expect(changeDirection({ x: 0, y: 0, direction: "north" }, () => 5).error).toBeTruthy();
 });
 
 test("LEFT when facing north", () => {

@@ -1,5 +1,5 @@
 import { move } from "./move";
-import { MAX_TABLE_INDEX } from "../constants";
+import { MAX_TABLE_INDEX, TABLE_SIZE } from "../constants";
 
 test("currentPlace cannot be empty", () => {
   expect(move().error).toBeTruthy();
@@ -15,12 +15,12 @@ test("currentPlace must be valid", () => {
   expect(move(null, { x: undefined, y: 0, direction: "south" }).error).toBeTruthy();
   expect(move(null, { x: "invalid", y: 0, direction: "south" }).error).toBeTruthy();
   expect(move(null, { x: -1, y: 0, direction: "south" }).error).toBeTruthy();
-  expect(move(null, { x: 10, y: 0, direction: "south" }).error).toBeTruthy();
+  expect(move(null, { x: TABLE_SIZE, y: 0, direction: "south" }).error).toBeTruthy();
   expect(move(null, { y: null, x: 0, direction: "south" }).error).toBeTruthy();
   expect(move(null, { y: undefined, x: 0, direction: "south" }).error).toBeTruthy();
   expect(move(null, { y: "invalid", x: 0, direction: "south" }).error).toBeTruthy();
   expect(move(null, { y: -1, x: 0, direction: "south" }).error).toBeTruthy();
-  expect(move(null, { y: 10, x: 0, direction: "south" }).error).toBeTruthy();
+  expect(move(null, { y: TABLE_SIZE, x: 0, direction: "south" }).error).toBeTruthy();
 });
 
 test("toy robot must stay on the table", () => {

@@ -1,16 +1,17 @@
+import _ from "lodash";
 import { place } from "./place";
-
+import { TABLE_SIZE } from "../constants";
 test("args must be valid", () => {
   expect(place().error).toBeTruthy();
   expect(place([]).error).toBeTruthy();
   expect(place(["", "0", "south"]).error).toBeTruthy();
   expect(place(["invalid", "0", "south"]).error).toBeTruthy();
   expect(place(["-1", "0", "south"]).error).toBeTruthy();
-  expect(place(["10", "0", "south"]).error).toBeTruthy();
+  expect(place([_.toString(TABLE_SIZE), "0", "south"]).error).toBeTruthy();
   expect(place(["0", "", "south"]).error).toBeTruthy();
   expect(place(["0", "invalid", "south"]).error).toBeTruthy();
   expect(place(["0", "-1", "south"]).error).toBeTruthy();
-  expect(place(["0", "10", "south"]).error).toBeTruthy();
+  expect(place(["0", _.toString(TABLE_SIZE), "south"]).error).toBeTruthy();
   expect(place(["0", "0", ""]).error).toBeTruthy();
   expect(place(["0", "0", "invalid"]).error).toBeTruthy();
 });

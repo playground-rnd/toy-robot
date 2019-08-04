@@ -8,9 +8,15 @@
 - Run `node .` from the root project directory. Use standard input to enter commands.
 - Alternatively, Run `node . -d` to run the application in debug mode. This will print error message when invalid command/move is entered.
 
+## Test data
+
+- PLACE 0,0,NORTH
+- MOVE
+- REPORT
+
 ## Script
 
-- npm test - execute tests
+- npm test - Execute tests
 
 ## Assumption
 

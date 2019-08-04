@@ -1,4 +1,4 @@
-import { start } from "./toyRobot";
+import { start } from "../toyRobot";
 import commander from "commander";
 import inquirer from "inquirer";
 

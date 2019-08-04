@@ -1,6 +1,6 @@
 import _ from "lodash";
-import { place } from "./place";
-import { TABLE_SIZE } from "../constants";
+import { place } from "../place";
+import { TABLE_SIZE } from "../../constants";
 test("args must be valid", () => {
   expect(place().error).toBeTruthy();
   expect(place([]).error).toBeTruthy();

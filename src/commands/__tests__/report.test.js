@@ -1,4 +1,4 @@
-import { report } from "./report";
+import { report } from "../report";
 
 describe("report command action", () => {
   const mockConsole = jest.spyOn(console, "log").mockImplementation(() => {

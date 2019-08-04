@@ -1,5 +1,5 @@
-import { move } from "./move";
-import { MAX_TABLE_INDEX, TABLE_SIZE } from "../constants";
+import { move } from "../move";
+import { MAX_TABLE_INDEX, TABLE_SIZE } from "../../constants";
 
 test("currentPlace cannot be empty", () => {
   expect(move().error).toBeTruthy();

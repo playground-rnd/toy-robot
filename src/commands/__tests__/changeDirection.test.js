@@ -1,4 +1,4 @@
-import { left, right, changeDirection } from "./changeDirection";
+import { left, right, changeDirection } from "../changeDirection";
 
 test("currentPlace cannot be empty", () => {
   expect(changeDirection().error).toBeTruthy();
